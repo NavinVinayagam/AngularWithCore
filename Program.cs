@@ -13,6 +13,7 @@ builder.Services.AddServerSideBlazor(options =>
 {
     options.RootComponents.RegisterCustomElement<Counter>("my-blazor-counter");
 });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

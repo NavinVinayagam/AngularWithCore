@@ -8,16 +8,24 @@ const PROXY_CONFIG = [
       "/weatherforecast",
       "/_content",
       "/_framework",
-      "/_blazor"
-   ],
+      "/_blazor",
+    ],
+    proxyTimeout: 3000,
     target: target,
     secure: false,
-    ws: true,
-    logLevel: "debug",
     headers: {
       Connection: 'Keep-Alive'
     }
+  },
+  {
+    context: [
+      "/_blazor"
+    ],
+    target: target,
+    secure: false,
+    ws: true,
+    logLevel: "debug"
   }
-]
+];
 
 module.exports = PROXY_CONFIG;
